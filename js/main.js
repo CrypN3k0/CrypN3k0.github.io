@@ -33,4 +33,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function onRecaptchaSuccess() {
   document.getElementById('submit-button').style.display = 'block';
+  document.getElementById('recaptcha').style.display = 'none';
 }
