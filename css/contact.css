@@ -38,7 +38,7 @@ main h1{
 
 .contactForm textarea{
   resize: none; /*入力欄のサイズ操作を禁止*/
-  margin: 30px auto;
+  margin: 0 auto 30px auto;
   field-sizing: content;
   max-width: 400px;
   width: 100%;
@@ -74,4 +74,35 @@ main h1{
 
 #thanks{
   display: none;
+}
+
+#overlay{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  border-radius: 10px;
+}
+
+#popup{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #707070;
+  padding: 30px;
+  border-radius: 10px;
+  z-index: 1000;
+  width: 300px;
+  text-align: center;
+}
+
+#closeButton{
+  margin-top: 20px;
+  padding: 5px 15px;
+  cursor: pointer;
 }
