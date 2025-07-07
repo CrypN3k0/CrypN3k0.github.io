@@ -30,8 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   workElems.forEach(el => observer.observe(el));
 
+  const submitButton = document.getElementById('submit-button');
   const overlay = document.getElementById('overlay');
   const closeButton = document.getElementById('closeButton');
+
+  submitButton.addEventListener('click', () => {
+    overlay.style.display = 'block';
+  });
 
   closeButton.addEventListener('click', () => {
     overlay.style.display = 'none';
@@ -45,10 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function onRecaptchaSuccess() {
-  const overlay = document.getElementById('overlay');
   document.getElementById('submit-button').style.display = 'block';
   document.getElementById('recaptcha').style.display = 'none';
   document.getElementById('please').style.display = 'none';
   document.getElementById('thanks').style.display = 'block';
-  overlay.style.display = 'block';
 }
