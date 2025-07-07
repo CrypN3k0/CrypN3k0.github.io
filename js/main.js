@@ -29,6 +29,24 @@ document.addEventListener("DOMContentLoaded", () => {
     threshold: 0.1
   });
   workElems.forEach(el => observer.observe(el));
+
+  const submitButton = document.getElementById('submit-button');
+  const overlay = document.getElementById('overlay');
+  const closeButton = document.getElementById('closeButton');
+
+  submitButton.addEventListener('click', () => {
+    overlay.style.display = 'block';
+  });
+
+  closeButton.addEventListener('click', () => {
+    overlay.style.display = 'none';
+  });
+
+  overlay.addEventListener('click', () => {
+    if (e.target === overlay) {
+      overlay.style.display = 'none';
+    }
+  });
 });
 
 function onRecaptchaSuccess() {
