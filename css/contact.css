@@ -67,3 +67,11 @@ main h1{
   display: block;
   justify-content: center;
 }
+
+#please{
+  display: block;
+}
+
+#thanks{
+  display: none;
+}
