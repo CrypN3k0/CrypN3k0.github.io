@@ -61,3 +61,8 @@ main h1{
 #attention{
   margin-bottom: 30px;
 }
+
+#recaptcha{
+  margin: 0 auto;
+  display: block;
+}
