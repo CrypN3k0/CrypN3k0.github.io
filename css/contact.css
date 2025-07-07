@@ -65,4 +65,5 @@ main h1{
 #recaptcha{
   margin: 0 auto;
   display: block;
+  justify-content: center;
 }
