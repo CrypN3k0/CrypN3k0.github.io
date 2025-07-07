@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>CrypN3ko - Contact</title>
+    <meta name="description" content="InformationA End-of-Semester Assignment Contact Page">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script src="../js/main.js" defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+
+  <body>
+
+    <header>
+      <a href="../index.html" class="topLogo">
+        <img src="../img/CrypN3ko_logo.png" alt="CrypN3ko ロゴ">
+      </a>
+      <nav>
+        <button id="menuToggle" aria-label="Toggle navigation">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <ul id="navList">
+          <li><a href="../index.html">HOME</a></li>
+          <li><a href="#music">Works - Music</a></li>
+          <li><a href="#illust">Works - Illust</a></li>
+          <li><a href="../html/contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main>
+      <h1>CrypN3ko お問い合わせフォーム</h1>
+      <p>
+        <span>作曲・イラストのご依頼、コンテンツのご利用に関するお問い合わせはこちらからお願いします</span><br>
+        <span></span>
+      </p>
+
+      <form action="https://formsubmit.co/CrypN3ko+Contact@gmail.com" method="POST" class="contactForm">
+        <div class="horizontal">
+          <div class="horInput">
+            <p>お名前（ハンドルネームなど）</p>
+            <input type="text" name="name" placeholder="暗号 猫（必須項目）" required>
+          </div>
+          <div class="horInput">
+            <p>メールアドレス</p>
+            <input type="email" name="email" placeholder="example@example.com（必須項目）">
+          </div>
+        </div>
+        <p>お問い合わせ内容</p>
+        <textarea name="message" placeholder="お問い合わせ内容" required></textarea>
+        <div class="recaptcha" data-sitekey="6Lc7pXkrAAAAALUjnJ1r_27i4-qB-_a7Z00QFqfI" data-callback="onRecaptchaSuccess"></div>
+        <button type="submit">送信</button>
+      </form>
+
+      <h3>注意</h3>
+      <p id="attention">
+        <span>外部サービスを経由した送信ですので、個人情報などは送信しないようお願いします</span><br>
+        <span>架空のクリエイターですので、実際のご依頼につかれましては返答できかねます</span>
+      </p>
+    </main>
+
+    <footer>
+      <p><span>このページおよび各所のリンク先のアカウントは課題用に作られた架空のものであり、</span><span>実在する個人や団体と一切の関係がありません。</span></p>
+      <p>©︎CrypN3ko All Right Reserved</p>
+    </footer>
+  </body>
+</html>
