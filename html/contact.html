@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/contact.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <script src="../js/main.js" defer></script>
+    <script src="../js/lang.js" defer></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
 
@@ -18,67 +19,75 @@
 
     <header>
       <a href="../index.html" class="topLogo">
-        <img src="../img/CrypN3ko_logo.png" alt="CrypN3ko ロゴ">
+        <img src="../img/CrypN3ko_logo.png" alt="CrypN3ko ロゴ" data-trans-alt="HeaderLogo">
       </a>
-      <nav>
-        <button id="menuToggle" aria-label="Toggle navigation">
-          <span class="material-symbols-outlined">menu</span>
-        </button>
-        <ul id="navList">
-          <li><a href="../index.html">HOME</a></li>
-          <li><a href="../index.html#music">Works - Music</a></li>
-          <li><a href="../index.html#illust">Works - Illust</a></li>
-          <li><a href="../html/contact.html">CONTACT</a></li>
-        </ul>
-      </nav>
+      <div id="headerDiv">
+        <select>
+          <option value="ja">日本語</option>
+          <option value="en">English</option>
+          <option value="zh-cn">中文（简体）</option>
+          <option value="zh-tw">中文（繁體）</option>
+          <option value="ko">한국어</option>
+        </select>
+        <nav>
+          <button id="menuToggle" aria-label="Toggle navigation" data-trans-aria-label="ToggleNavigation">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+          <ul id="navList">
+            <li><a href="../index.html" data-trans="NavHome">HOME</a></li>
+            <li><a href="../index.html#music" data-trans="NavWorksMusic">Works - Music</a></li>
+            <li><a href="../index.html#illust" data-trans="NavWorksIllust">Works - Illust</a></li>
+            <li><a href="contact.html" data-trans="NavContact">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     
     <main>
-      <h1>CrypN3ko お問い合わせフォーム</h1>
-      <p>
+      <h1 data-trans="ContactTitle">CrypN3ko お問い合わせフォーム</h1>
+      <p data-trans="ContactDescription">
         <span>作曲・イラストのご依頼、コンテンツのご利用に関するお問い合わせはこちらからお願いします</span><br>
-        <span></span>
       </p>
 
       <form action="https://formsubmit.co/598e03c9244b369d668f4654cba6eb53" method="POST" class="contactForm">
         <div class="horizontal">
           <div class="horInput">
-            <p>お名前（ハンドルネームなど）</p>
-            <input type="text" name="name" placeholder="暗号 猫（必須項目）" required>
+            <p data-trans="ContactInputNameTitle">お名前（ハンドルネームなど）</p>
+            <input type="text" name="name" placeholder="暗号 猫（必須項目）" data-trans-placeholder="ContactInputName" required>
           </div>
           <div class="horInput">
-            <p>メールアドレス</p>
-            <input type="email" name="email" placeholder="example@example.com（必須項目）">
+            <p data-trans="ContactInputMailTitle">メールアドレス</p>
+            <input type="email" name="email" placeholder="example@example.com（必須項目）" data-trans-placeholder="ContactInputMail" required>
           </div>
         </div>
-        <p>お問い合わせ内容</p>
-        <textarea name="message" placeholder="お問い合わせ内容" rows="8" required></textarea>
+        <p data-trans="ContactInputContentTitle">お問い合わせ内容</p>
+        <textarea name="message" placeholder="お問い合わせ内容" data-trans-placeholder="ContactInputContent" rows="8" required></textarea>
         <div class="g-recaptcha" data-sitekey="6LchYHorAAAAAKCUBtHoNxEIpYluiioqcCl9TFqo" data-callback="onRecaptchaSuccess" id="recaptcha"></div>
-        <button type="submit" id="submit-button">送信</button>
-        <p id="please">悪意のある送信を防ぐためにreCAPTCHAを導入しております。ご協力お願いします</p>
-        <p id="thanks">ご協力ありがとうございます</p>
+        <button type="submit" id="submit-button" data-trans="ContactSubmitButton">送信</button>
+        <p id="please" data-trans="ContactPlease">悪意のある送信を防ぐためにreCAPTCHAを導入しております。ご協力お願いします</p>
+        <p id="thanks" data-trans="ContactThanks">ご協力ありがとうございます</p>
       </form>
 
-      <h3>注意</h3>
-      <p id="attention">
+      <h3 data-trans="ContactAttentionTitle">注意</h3>
+      <p id="attention" data-trans="ContactAttention">
         <span>外部サービスを経由した送信ですので、個人情報などは送信しないようお願いします</span><br>
         <span>架空のクリエイターですので、実際のご依頼につかれましては返答できかねます</span>
       </p>
 
       <div id="overlay">
         <div id="popup">
-          <p>
+          <p data-trans="ContactPopup">
             <span>送信が完了しました</span><br>
             <span>外部サービスを利用しているため、受信・返信に時間がかかる場合がありますご了承ください</span><br>
-            <button id="closeButton">閉じる</button>
+            <button id="closeButton" data-trans="ContactPopupButton">閉じる</button>
           </p>
         </div>
       </div>
     </main>
 
     <footer>
-      <p><span>このページおよび各所のリンク先のアカウントは課題用に作られた架空のものであり、</span><span>実在する個人や団体と一切の関係がありません。</span></p>
-      <p>©︎CrypN3ko All Right Reserved</p>
+      <p data-trans="FooterP"><span>このページおよび各所のリンク先のアカウントは課題用に作られた架空のものであり、</span><span>実在する個人や団体と一切の関係がありません。</span></p>
+      <p>©︎FU25058 All Right Reserved</p>
     </footer>
   </body>
 </html>
