@@ -1,4 +1,3 @@
-/*add font*/
 @font-face {
   font-family: Line-seed-Rg;
   src: url(/font/LINESeedJP_TTF_Rg.ttf);
@@ -8,15 +7,13 @@
   font-family: Saira-Light;
   src: url(/font/Saira-Light.ttf);
 }
-/*add font end*/
 
 *{
   margin: 0;
   padding: 0;
-  font-family: Line-seed-Rg; /*初期フォントを設定*/
+  font-family: Line-seed-Rg;
 }
 
-/*Google Material Symbols import*/
 .material-symbols-outlined{
   font-variation-settings:
     'FILL' 0,
@@ -24,99 +21,95 @@
     'GRAD' 0,
     'opsz' 48;
 }
-/*Google Material Symbols import終了*/
 
 html{
   scroll-behavior: smooth;
 }
 
-/*header parts*/
-/*header要素開始 画面サイズによるメニュー形式の差があるため要注意*/
 header{
   background-color: #8b0000;
-  display: flex; /*メニューとロゴを横並びに 影響なし*/
-  justify-content: space-between; /*ロゴとメニューを左右に振り分け 影響なし(?)*/
-  align-items: center; /*中央になるように*/
-  padding: 10px 20px; /*ギリギリに要素が来ないように*/
-  flex-wrap: wrap; /*要素の折り返しを許可*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  flex-wrap: wrap;
 }
 
-/*header内のlogoを設定 影響がないためそのまま記載*/
+#headerDiv{
+  display: flex;
+  gap: 20px;
+}
+
 .topLogo img {
-  height: 60px; /*高さ固定*/
-  width: auto; /*比率追従*/
-  margin: 10px 0px; /*margin*/
+  height: 60px;
+  width: auto;
+  margin: 10px 0px;
 }
 
-/*menu系の記述開始地点 768pxを閾値に、上側は初期値として、下側は@mediaで指定*/
 nav{
   position: relative;
 }
 
-/*ボタン部分についての設定*/
 #menuToggle{
-  background: none; /*背景部分を削除*/
-  border: none; /*ボーダーを削除*/
-  display: none; /*通常時に非表示*/
-  color: #FFFFFF; /*ハンバーガーメニューのアイコンの色を白に*/
-  cursor: pointer; /*カーソルがクリックになるように*/
+  background: none;
+  border: none;
+  display: none;
+  color: #FFFFFF;
+  cursor: pointer;
 }
 
 #navList{
-  display: flex; /*子要素の配置を容易に*/
-  list-style: none; /*先頭の丸を削除*/
+  display: flex;
+  list-style: none;
 }
 
-/*navigation部分の子要素を設定*/
 #navList li{
-  padding: 0 15px; /*左右の干渉を防止*/
-  border-left: 2px solid transparent; /*要素の間をわかりやすくするために線を追加*/
-  border-image: linear-gradient(to top, #8b0000, #a0a0a0, #a0a0a0, #a0a0a0, #8b0000) 1; /*グラデーションをつける*/
+  padding: 0 15px;
+  border-left: 2px solid transparent;
+  border-image: linear-gradient(to top, #8b0000, #a0a0a0, #a0a0a0, #a0a0a0, #8b0000) 1;
   display: flex;
   align-items: center;
 }
 
 #navList li a{
-  color: #FFFFFF; /*リンクの青色を白に*/
-  text-decoration: none; /*リンクの下線を削除*/
+  color: #FFFFFF;
+  text-decoration: none;
 }
 
-/*li要素の最初の要素についての例外を記載*/
 #navList li:first-child{
-  border-left: none; /*左端の要素のため、左のボーダーを削除*/
+  border-left: none;
 }
 
-/*768px以下の場合開始*/
 @media (max-width: 768px){
   #menuToggle{
-    display: block; /*ボタンを表示*/
+    display: block;
   }
 
   #navList{
-    flex-direction: column; /*要素の配置形式を縦に変更*/
-    overflow: hidden; /*要素から出た部分を非表示に*/
-    max-height: 0; /*要素のデフォルト状態での非表示*/
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
     padding: 0;
-    border: none; /*通常状態でのボーダーを削除*/
-    position: absolute; /*絶対位置化*/
-    top: 60px; /*位置調整*/
-    right: 0; /*位置調整*/
+    border: none;
+    position: absolute;
+    top: 60px;
+    right: 0;
     width: 150px; 
-    z-index: 100; /*要素の表示階層指定*/
-    transition: max-height 0.4s ease; /*スムースな動きを行うため*/
+    z-index: 100;
+    transition: max-height 0.4s ease;
     background-color: #404040;
   }
 
   #navList.show{
-    max-height: 300px; /*リストの表示*/
+    max-height: 300px;
     padding: 5px 0;
-    border: 1px solid #a0a0a0; /*表示した時の外周枠*/
+    border: 1px solid #a0a0a0;
   }
 
   #navList li{
-    border-top: 1px solid transparent; /*要素の区切り線*/
-    border-left: none; /*通常時のボーダーを削除*/
-    border-image: linear-gradient(to right, #404040, #a0a0a0, #404040) 1; /*グラデーションをつける*/
+    border-top: 1px solid transparent;
+    border-left: none;
+    border-image: linear-gradient(to right, #404040, #a0a0a0, #404040) 1;
     padding: 12px 10px;
   }
 
@@ -125,154 +118,129 @@ nav{
   }
 }
 
-/*body parts*/
 body{
   background-color: #2e2e2e;
   color: #FFFFFF;
 }
 
-/*nameCard要素開始(端末サイズに対する対策不要)*/
 .nameCard {
   margin: 40px 0 20px 0;
-  text-align: center; /*主にnameLogoをセンターにするため*/
+  text-align: center;
 }
 
 .nameCard img#nameLogo{
-  width: 30vw; /*画面サイズに対して30%*/
-  max-width: 300px; /*過度な拡大を防止*/
-  height: auto; /*比率維持*/
+  width: 30vw;
+  max-width: 300px;
+  height: auto;
 }
 
 .nameCard h1, .nameCard h3{
-  text-align: center; /*nameCardクラス内の全テキスト要素に中央揃えを適用*/
-  margin: 10px 0px; /*上と同様の範囲に上下のmarginを設ける*/
+  text-align: center;
+  margin: 10px 0px;
   font-family: Saira-Light;
 }
 
-/*links内は端末サイズの影響を受けにくいため設定不要*/
 .links{
-  display: flex; /*link内のlinks要素を横並びに*/
-  justify-content: center; /*linkクラスの中央に来るように調整*/
-  margin-bottom: 30px; /*下とのmarginを設ける*/
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 .links a{
-  margin: 0px 5px; /*視覚・判定的な隙間を設ける*/
+  margin: 0px 5px;
 }
 
 .links img{
-  height: 40px; /*サイズ調整*/
-  width: auto; /*heightに合わせてwidthを変更*/
-  transition: transform 0.3s ease; /*ホバー時のアニメーション用*/
+  height: 40px;
+  width: auto;
+  transition: transform 0.3s ease;
 }
 
-/*ホバー時の動作を設定*/
 .links img:hover {
-  transform: scale(1.3); /* 1.3倍に拡大 */
+  transform: scale(1.3);
 }
-/*links内要素終了*/
-/*nameCard要素終了*/
 
-/*explain要素開始(端末サイズに対する対策済み)*/
 .explain{
-  text-align: center; /*explain要素内のテキストに中央揃えを反映*/
-  margin: 30px; /*explain要素に対してmarginを設けて画面いっぱいの表示を避ける*/
+  text-align: center;
+  margin: 30px;
 }
-/*explain要素終了*/
 
-/*works要素開始*/
-/*works単体に関しては外枠のため画面サイズ変更に対しての対策不要*/
 .works{
   background-color: #404040;
-  text-align: center; /*works内に対してテキスト中央揃えを反映(description内はのちで設定して上書き)*/
-  margin: 30px auto; /*主にfooterとの隙間。autoはwidthを%で指定するため*/
-  width: 80%; /*画面全体を100%とした時の数値。相対的な設定によりサイズ変更から要素を保護*/
-  padding: 30px; /*要素内に対して余裕を持たせるため*/
-  border-radius: 10px; /*丸枠化*/
-  border: 2px solid #a0a0a0; /*要素外周に対して線を引く*/
+  text-align: center;
+  margin: 30px auto;
+  width: 80%;
+  padding: 30px;
+  border-radius: 10px;
+  border: 2px solid #a0a0a0;
 }
 
-/*sectionBlock要素開始*/
-/*sctionBlock単体に関しては外枠のため画面サイズ変更に対しての対策が不要*/
 .sectionBlock{
   background-color: #707070;
-  width: 80%; /*works内全体に対しての90%*/
-  margin: 40px auto; /*music、illust同士を区別し、works要素との隙間あけ autoにより左右の中央揃え*/
-  padding: 20px; /*ボーダーギリギリに要素が来ないように*/
-  border-radius: 10px; /*丸枠化*/
-  border: 2px solid #a0a0a0; /*要素外周に対して線を引く*/
+  width: 80%;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #a0a0a0;
 }
 
-/*sectionのタイトルに対しての設定*/
 .sectionBlock h2{
-  border-bottom: 2px solid #a0a0a0; /*下側線引きの設定*/
-  border-image: linear-gradient(to right, #707070, #a0a0a0, #8b0000, #a0a0a0, #707070) 1; /*線に対してのグラデーション設定*/
+  border-bottom: 2px solid #a0a0a0;
+  border-image: linear-gradient(to right, #707070, #a0a0a0, #8b0000, #a0a0a0, #707070) 1;
 }
-/*sectionBlock要素終了*/
 
-/*workElem要素開始 画面サイズによる大幅な変化を受けるため要注意*/
 .workElem{
-  display: flex; /*直下の要素の並び方を変えやすくするため flex-directionで設定できる(初期はrow)*/ /*規定値を超えた場合にflex-directionをcolumnにすることで要素のはみ出しと圧縮を防止*/
-  gap: 20px; /*flexによる直下要素の間を指定 column・rowのどちらでも可能なため柔軟性あり*/
-  justify-content: center; /*直上要素に対しての中央に配置 column・rowの両方で反映可能なため柔軟性あり*/
-  margin: 30px 0; /*親要素との隙間あけ*/
-  align-items: flex-start; /*flexの要素位置を交差軸基準で調整*/
-  flex-wrap: wrap; /*親要素から子要素はみ出た際に下折り返しを許可*/
-  opacity: 0; /*通常時不透明度を0にすることでフェードインを実現*/
-  transform: translateY(30px); /*30px下に表示*/
-  transition: opacity 0.6s ease, transform 0.6s ease; /*アニメーション用*/
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 30px 0;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/*フェードイン表示時*/
 .workElem.visible {
-  opacity: 1; /*不透明度を解除*/
-  transform: translateY(0); /*表示位置を戻す*/
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/*workElem内のimgについて設定*/
 .workElem img{
-  width: 100%; /*workElem要素に対しての100%*/
-  max-width: 300px; /*要素の大幅拡大による不意な折り返しを防止*/
-  object-fit: contain; /*指定された枠の中に収まるように比率を変更*/
+  width: 100%;
+  max-width: 300px;
+  object-fit: contain;
 }
 
-/*workElem内のiframeについて設定*/
 .workElem iframe{
-  display: flex; /*埋め込み要素を縦並びに(横並びの横並び?)*/
-  margin: 10px 0; /*上下の間を確保*/
+  display: flex;
+  margin: 10px 0;
   width: 100%;
 }
 
-/*description要素開始*/
 .description{
   background-color: #404040;
-  max-width: 400px; /*最大横幅を決めることで画面サイズ変化における大幅な変化を改善*/
-  text-align: left; /*親要素の引き継ぎを変更して左揃えに*/
-  border-radius: 10px; /*丸角化*/
-  border: 2px solid #a0a0a0; /*外枠指定*/
-  padding: 15px; /*内側の説明文要素を離すため*/
+  max-width: 400px;
+  text-align: left;
+  border-radius: 10px;
+  border: 2px solid #a0a0a0;
+  padding: 15px;
 }
 
-/*description内のタイトルについて設定*/
 .descriptionTitle{
-  font-size: 1.2em; /*親サイズに対して1.2倍*/
-  font-weight: 600; /*太さ決定*/
-  margin-bottom: 6px; /*説明文要素に対して十分な間を取る*/
-  border-left: 4px solid #8b0000; /*タイトル先頭に装飾*/
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 6px;
+  border-left: 4px solid #8b0000;
   padding-left: 8px;
 }
 
-/*description内の説明文について設定*/
 .description p{
-  margin-top: 10px; /*タイトル要素との間*/
-  line-height: 1.6; /*行の高さを指定*/
+  margin-top: 10px;
+  line-height: 1.6;
 }
-/*worksElem要素終了*/
-/*works要素終了*/
 
-
-/*footer parts*/
 footer{
   background-color: #121212;
-  text-align: center; /*中央揃えを反映*/
+  text-align: center;
 }
